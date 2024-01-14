@@ -1,70 +1,89 @@
-# Getting Started with Create React App
+# Quiz App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+This is a Quiz App built using React. The application fetches questions from the Open Trivia Database API, allows users to answer them, and provides a quiz report at the end.
 
-In the project directory, you can run:
+### Components
 
-### `npm start`
+1. **Quiz Component:** 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Manages the overall quiz functionality, including fetching questions, handling user answers, and managing the timer.
+- Allows navigation between questions.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. **Question Component:**
 
-### `npm test`
+  - Displays a single question, along with answer options.
+  - Allows users to select an answer and proceed to the next question.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. **QuizReport Compnent:**
 
-### `npm run build`
+  - Displays a report at the end of the quiz, showing the user's score, each question, the user's answer, and the correct answer.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. **QuestionNavigator Component:**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Provides a navigation panel to jump to specific questions.
+- Highlights the current question, visited questions, and attempted questions.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Setup and Installation
 
-### `npm run eject`
+1. Clone the repository
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+git clone https://github.com/kumarsantosh3914/CausalFunnel-test.git
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. Change into the project directory:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```
+cd CausalFunnel-test
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3. Install dependencies:
 
-## Learn More
+```
+npm install
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. Run the application:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+npm start
+```
 
-### Code Splitting
+5. Open your browser and visit  http://localhost:3000
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+## Assumptions
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. The Open Trivia Database API is available and returns questions in the epected format.
 
-### Making a Progressive Web App
+2. The quiz has a fixed number of questions (15 in this case).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Challenges Faced
 
-### Advanced Configuration
+1. Timer Functionality:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Implementing and managing the timer to track the remaning time for the quiz.
 
-### Deployment
+2. Navigation and State Management:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- Ensuring the correct state management for user answers, current questions, and navigation.
 
-### `npm run build` fails to minify
+3. Responsive Design:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Making the application responsive and handling UI changes for smaller screens.
+
+## How Challenges Were Overcome
+
+1. Timer Functionality
+
+- Used the `setInterval` function to decrement the timer every second.
+
+2. Navigation and State Management:
+
+- Employed React hooks (`useState` and `useEffect`) to manage state and control component lifecycle.
+
+3. Responsive Design:
+
+- Applied media queries in CSS to adjust the styling based on screen size.
